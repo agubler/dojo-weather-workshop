@@ -1,0 +1,17 @@
+{
+	"extends": "./node_modules/@dojo/parade/parade.json",
+	"build-theme": {
+		"themes": [
+			"weather-workshop"
+		]
+	},
+	"build-widget": {
+		"prefix": "weather-workshop",
+		"widgets": [
+			"src/button/Button"
+		]
+	},
+	"build-app": {},
+	"test-intern": {},
+	"create-widget": {}
+}
