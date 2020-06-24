@@ -5,7 +5,6 @@ import {
 	defaultFind
 } from '@dojo/framework/core/middleware/resources';
 import * as css from './Weather.m.css';
-import icons from './icons';
 
 const resource = createResourceMiddleware();
 
@@ -42,7 +41,6 @@ export default factory(function Weather({ id, properties, middleware: { resource
 	const [weatherDetails] = getOrRead(weatherTemplate, options({ query: { name: location } }));
 	if (weatherDetails) {
 		const [weatherDetail] = weatherDetails;
-		console.log(weatherDetail);
 		return (
 			<div classes={css.root}>
 				<div classes={css.leading}>
