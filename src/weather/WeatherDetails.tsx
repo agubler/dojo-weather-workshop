@@ -26,24 +26,8 @@ const weatherTemplate = createResourceTemplate<WeatherDetails>({
 		const { query } = request;
 		const response = await fetch(`https://dramatic-carbonated-goldfish.glitch.me/weather?query=${query.name}`);
 		const json = await response.json();
-		put(
-			{
-				data: [
-					{
-						name: json.name,
-						temp: json.main.temp.toFixed(),
-						minTemp: json.main.temp_min.toFixed(),
-						maxTemp: json.main.temp_max.toFixed(),
-						windSpeed: 1,
-						humidity: 1,
-						description: json.weather.map((item: any) => item.description),
-						icon: icons[json.weather[0].icon]
-					}
-				],
-				total: 1
-			},
-			request
-		);
+		console.log(json);
+		put(json, request);
 	}
 });
 
@@ -51,17 +35,17 @@ interface WeatherDetailsProperties {
 	location: string;
 }
 
-const factory = create({ resource })
-	.properties<WeatherDetailsProperties>()
-	.key('location');
+const factory = create({ resource }).properties<WeatherDetailsProperties>();
 
 export default factory(function Weather({ id, properties, middleware: { resource } }) {
 	const { location } = properties();
 	const { createOptions, getOrRead } = resource;
 	const options = createOptions(id);
 	const [weatherDetails] = getOrRead(weatherTemplate, options({ query: { name: location } }));
+	console.log(weatherDetails);
 	if (weatherDetails) {
 		const [weatherDetail] = weatherDetails;
+		console.log(weatherDetail);
 		return (
 			<div classes={css.root}>
 				<div classes={css.container}>

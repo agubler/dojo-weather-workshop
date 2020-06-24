@@ -5,9 +5,9 @@
 		<meta name="theme-color" content="#222127">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="./output/dist/dev/weather-1.0.0.css"/>
-		<link rel="stylesheet" href="./node_modules/@dojo/widgets/theme/dojo/dojo-7.0.0.css">
-		<link rel="stylesheet" href="./node_modules/@dojo/widgets/theme/material/material-7.0.0.css">
-		<link rel="stylesheet" href="./node_modules/@dojo/widgets/dist/button-7.0.0.css">
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/theme/dojo/dojo-7.0.0.css">
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/theme/material/material-7.0.0.css">
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/dist/button-7.0.0.css">
 		<style>
 			html,
 			body {
@@ -24,9 +24,9 @@
 		</style>
 	</head>
 	<body>
-		<script src="./node_modules/@dojo/widgets/theme/dojo/dojo-7.0.0.js"></script>
-		<script src="./node_modules/@dojo/widgets/theme/material/material-7.0.0.js"></script>
-		<script src="./node_modules/@dojo/widgets/dist/button-7.0.0.js"></script>
+		<script src="./output/dist/@dojo/widgets/theme/dojo/dojo-7.0.0.js"></script>
+		<script src="./output/dist/@dojo/widgets/theme/material/material-7.0.0.js"></script>
+		<script src="./output/dist/@dojo/widgets/dist/button-7.0.0.js"></script>
 		<dojo-button id="readonly">Toggle Readonly</dojo-button>
 		<dojo-button id="variant">Toggle Variant</dojo-button>
 		<dojo-button id="theme">Toggle Theme</dojo-button>
@@ -37,7 +37,6 @@
 		<script>
 
 			variant.addEventListener('click', () => {
-				console.log(dojoce.variant);
 				if (dojoce.variant === 'dark') {
 					document.body.style = "";
 					dojoce.variant = 'default';
@@ -47,7 +46,6 @@
 				}
 			});
 			theme.addEventListener('click', () => {
-				console.log(dojoce.theme);
 				if (dojoce.theme === 'dojo') {
 					dojoce.theme = 'material';
 				} else {

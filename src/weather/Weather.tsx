@@ -39,7 +39,6 @@ export default factory(function Weather({ properties, middleware: { resource } }
 				<ChipTypeAhead
 					resource={resource({ template: capitalCityTemplate })}
 					onValue={(value) => {
-						console.log(value);
 						onChange(value);
 					}}
 					value={locations}
