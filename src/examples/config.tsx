@@ -1,6 +1,6 @@
-import weatherWorkshop from '../theme/weather-workshop';
+import material from '@dojo/widgets/theme/material';
 
-import ButtonExample from './button/ButtonExample';
+import BasicWeather from './weather/BasicWeather';
 
 `!has('docs')`;
 import testsContext from './tests';
@@ -10,22 +10,19 @@ const tests = typeof testsContext !== 'undefined' ? testsContext : { keys: () =>
 export const config = {
 	name: 'weather-workshop',
 	home: 'src/examples/README.md',
-	themes: [
-		{ label: 'weather-workshop', theme: weatherWorkshop },
-		{ label: 'default', theme: {} }
-	],
+	themes: [{ label: 'default', theme: material }],
 	tests,
 	readmePath: (widget: string) => `src/${widget}/README.md`,
 	widgetPath: (widget: string, filename: string) => `src/${widget}/${filename || 'index'}.tsx`,
-	examplePath: (widget: string, filename: string) => `src/examples/src/widgets/${widget}/${filename || 'index'}.tsx`,
+	examplePath: (widget: string, filename: string) => `src/examples/${widget}/${filename || 'index'}.tsx`,
 	codesandboxPath: () => '',
 	widgets: {
-		button: {
-			filename: 'Button',
+		weather: {
+			filename: 'Weather',
 			overview: {
 				example: {
-					filename: 'ButtonExample',
-					module: ButtonExample
+					filename: 'BasicWeather',
+					module: BasicWeather
 				}
 			}
 		}

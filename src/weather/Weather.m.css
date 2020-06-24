@@ -1,0 +1,67 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css';
+
+.root {
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom right, #0181c2, #04a7f9, #4bc4f7);
+	display: flex;
+}
+
+.container {
+	padding: 25px;
+	width: 60%;
+}
+
+.containerRight {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 0 7px 7px 0;
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hr {
+	width: 100%;
+	height: 0;
+	border-bottom: solid 1px #fff;
+	opacity: 0.4;
+	margin: 10px 0;
+}
+
+.current {
+	font-size: 45px;
+}
+
+.range {
+	font-size: 12px;
+	margin: 0 0 5px 2px;
+}
+
+.header {
+	margin: 0 0 10px 0;
+	font-weight: 300;
+	font-size: x-large;
+	letter-spacing: 2px;
+}
+
+.desc {
+	font-size: 16px;
+}
+
+.icon {
+	font-size: 20px;
+	margin-top: 15px;
+	font-size: 35px;
+}
+
+.mainIcon {
+	font-size: 100px;
+}
+
+.info {
+	margin-bottom: 5px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Weather Custom Element</title>
+		<meta name="theme-color" content="#222127">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./output/dist/dev/weather-1.0.0.css"/>
+		<link rel="stylesheet" href="./node_modules/@dojo/widgets/theme/dojo/dojo-7.0.0.css">
+		<link rel="stylesheet" href="./node_modules/@dojo/widgets/theme/material/material-7.0.0.css">
+		<link rel="stylesheet" href="./node_modules/@dojo/widgets/dist/button-7.0.0.css">
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+				font-family: arial;
+			}
+
+			.container {
+				width: 700px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="./node_modules/@dojo/widgets/theme/dojo/dojo-7.0.0.js"></script>
+		<script src="./node_modules/@dojo/widgets/theme/material/material-7.0.0.js"></script>
+		<script src="./node_modules/@dojo/widgets/dist/button-7.0.0.js"></script>
+		<dojo-button id="readonly">Toggle Readonly</dojo-button>
+		<dojo-button id="variant">Toggle Variant</dojo-button>
+		<dojo-button id="theme">Toggle Theme</dojo-button>
+		<dojo-button id="populate">Populate Locations</dojo-button>
+		<div class="container">
+			<dojo-weather id="weather" readonly=true></dojo-weather>
+		</div>
+		<script>
+
+			variant.addEventListener('click', () => {
+				console.log(dojoce.variant);
+				if (dojoce.variant === 'dark') {
+					document.body.style = "";
+					dojoce.variant = 'default';
+				} else {
+					document.body.style = "background: #121212;";
+					dojoce.variant = 'dark';
+				}
+			});
+			theme.addEventListener('click', () => {
+				console.log(dojoce.theme);
+				if (dojoce.theme === 'dojo') {
+					dojoce.theme = 'material';
+				} else {
+					dojoce.theme = 'dojo';
+				}
+			});
+			readonly.addEventListener('click', () => {
+				weather.readonly = !weather.readonly;
+			});
+			populate.addEventListener('click', () => {
+				weather.locations = ['London', 'Paris'];
+			});
+			weather.addEventListener('change', ({ detail }) => {
+				weather.locations = detail[0];
+			})
+		</script>
+		<script async src="./output/dist/dev/weather-1.0.0.js"></script>
+	</body>
+</html>

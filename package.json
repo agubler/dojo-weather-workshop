@@ -5,20 +5,18 @@
 		"dev": "dojo build app -m dev -w -s",
 		"build": "npm-run-all -s clean build:**",
 		"build:prepare": "shx mkdir .temp-dist",
-		"build:ce": "dojo build widget && shx cp -r output/dist .temp-dist/",
-		"build:lib": "dojo build widget -t lib && shx cp -r output/dist/** .temp-dist",
-		"build:lib:legacy": "dojo build widget -t lib -l && shx cp -r output/dist/** .temp-dist",
-		"build:themes": "dojo build theme && shx cp -r output/theme/* .temp-dist/theme",
+		"build:ce": "dojo build widget -m dev && shx cp -r output/dev .temp-dist/",
 		"build:meta": "shx cp package.json .temp-dist && shx cp README.md .temp-dist",
 		"build:finalize": "shx rm -rf output/dist && shx mv .temp-dist/ output/dist",
 		"clean": "shx rm -rf .temp-dist",
-		"prettier": "prettier --write \"{docs,src,tests}/**/*.{ts,tsx,md}\"",
+		"prettier": "prettier --write \"{docs,src,tests}/**/*.{ts,css,tsx,md}\"",
 		"docs": "dojo build app -f docs=true",
 		"test": "dojo test",
 		"test:headless": "dojo build widget -m unit && dojo test -u -c headless"
 	},
 	"dependencies": {
 		"@dojo/framework": "~7.0.0",
+		"@dojo/widgets": "^7.0.0",
 		"tslib": "~1.9.1"
 	},
 	"devDependencies": {
