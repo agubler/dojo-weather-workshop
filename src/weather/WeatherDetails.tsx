@@ -16,8 +16,6 @@ interface WeatherDetails {
 	minTemp: number;
 	description: string[];
 	icon: string;
-	windSpeed: number;
-	humidity: number;
 }
 
 const weatherTemplate = createResourceTemplate<WeatherDetails>({
@@ -42,30 +40,23 @@ export default factory(function Weather({ id, properties, middleware: { resource
 	const { createOptions, getOrRead } = resource;
 	const options = createOptions(id);
 	const [weatherDetails] = getOrRead(weatherTemplate, options({ query: { name: location } }));
-	console.log(weatherDetails);
 	if (weatherDetails) {
 		const [weatherDetail] = weatherDetails;
 		console.log(weatherDetail);
 		return (
 			<div classes={css.root}>
 				<div classes={css.leading}>
-					<div>
-						<p classes={css.time}>{new Date().toLocaleTimeString('en-US')}</p>
-						<h1 classes={css.name}>{weatherDetail.name}</h1>
-					</div>
+					<h1 classes={css.name}>{weatherDetail.name}</h1>
 					<div classes={css.info}>
 						<div>{`${weatherDetail.minTemp} / ${weatherDetail.maxTemp}°C`}</div>
 						<div classes={css.description}>
-							{weatherDetail.description.map((item) => item).join(' or ')}
-							{' '}<i classes={[css.icon, 'wi', weatherDetail.icon]}></i>							
+							{weatherDetail.description.map((item) => item).join(' or ')}{' '}
+							<i classes={[css.icon, 'wi', weatherDetail.icon]}></i>
 						</div>
 					</div>
 				</div>
-				<div classes={css.trailing}>
-					{`${weatherDetail.temp}°C`}
-				</div>
+				<div classes={css.trailing}>{`${weatherDetail.temp}°C`}</div>
 			</div>
 		);
 	}
-	return 'Loading';
 });

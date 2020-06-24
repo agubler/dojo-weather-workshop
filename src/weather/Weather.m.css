@@ -1,12 +1,13 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css';
 
 .root {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif, sans-serif;
 	color: #fff;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to bottom right, #0181c2, #04a7f9, #4bc4f7);
-	display: flex;	
+	display: flex;
 	font-size: 16px;
 	line-height: 18px;
 }
@@ -18,7 +19,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .trailing {
@@ -41,14 +42,6 @@
 	line-height: 24px;
 	letter-spacing: 1px;
 	margin: 0;
-}
-
-.time {
-	margin-top: 0;
-	margin-bottom: 4px;	
-	font-size: 14px;
-	line-height: 16px;
-	color: #efefef;
 }
 
 .icon {

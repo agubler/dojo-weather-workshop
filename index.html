@@ -9,16 +9,15 @@
 		<link rel="stylesheet" href="./output/dist/@dojo/widgets/theme/material/material-7.0.0.css">
 		<link rel="stylesheet" href="./output/dist/@dojo/widgets/dist/button-7.0.0.css">
 		<style>
-			html,
 			body {
 				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
+				padding: 32px;
 				font-family: arial;
+				box-sizing: border-box;
 			}
 
 			.container {
+				margin-top: 16px;
 				width: 700px;
 			}
 		</style>
@@ -28,9 +27,9 @@
 		<script src="./output/dist/@dojo/widgets/theme/material/material-7.0.0.js"></script>
 		<script src="./output/dist/@dojo/widgets/dist/button-7.0.0.js"></script>
 		<dojo-button id="readonly">Toggle Readonly</dojo-button>
-		<dojo-button id="variant">Toggle Variant</dojo-button>
-		<dojo-button id="theme">Toggle Theme</dojo-button>
 		<dojo-button id="populate">Populate Locations</dojo-button>
+		<dojo-button id="theme">Toggle Theme</dojo-button>
+		<dojo-button id="variant">Toggle Variant</dojo-button>
 		<div class="container">
 			<dojo-weather id="weather" readonly=true></dojo-weather>
 		</div>
