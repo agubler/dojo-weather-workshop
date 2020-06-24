@@ -48,32 +48,21 @@ export default factory(function Weather({ id, properties, middleware: { resource
 		console.log(weatherDetail);
 		return (
 			<div classes={css.root}>
-				<div classes={css.container}>
-					<h2 classes={css.header}>{weatherDetail.name}</h2>
+				<div classes={css.leading}>
 					<div>
-						<div>{new Date().toLocaleDateString()}</div>
-						<div classes={css.hr}></div>
-						<div classes={css.current}>{`${weatherDetail.temp} °C`}</div>
-						<div classes={css.range}>{`${weatherDetail.minTemp} / ${weatherDetail.maxTemp} °C`}</div>
-						<div classes={css.desc}>
-							<i classes={[css.icon, 'wi', weatherDetail.icon]}></i>
+						<p classes={css.time}>{new Date().toLocaleTimeString('en-US')}</p>
+						<h1 classes={css.name}>{weatherDetail.name}</h1>
+					</div>
+					<div classes={css.info}>
+						<div>{`${weatherDetail.minTemp} / ${weatherDetail.maxTemp}°C`}</div>
+						<div classes={css.description}>
 							{weatherDetail.description.map((item) => item).join(' or ')}
-						</div>
-						<div classes={css.hr}></div>
-						<div>
-							<div classes={css.info}>
-								<span>Wind: </span>
-								{`${weatherDetail.windSpeed} km/h`}
-							</div>
-							<div classes={css.info}>
-								<span>Humidity: </span>
-								{`${weatherDetail.humidity} %`}
-							</div>
+							{' '}<i classes={[css.icon, 'wi', weatherDetail.icon]}></i>							
 						</div>
 					</div>
 				</div>
-				<div classes={css.containerRight}>
-					<i classes={[css.mainIcon, 'wi', weatherDetail.icon]}></i>
+				<div classes={css.trailing}>
+					{`${weatherDetail.temp}°C`}
 				</div>
 			</div>
 		);

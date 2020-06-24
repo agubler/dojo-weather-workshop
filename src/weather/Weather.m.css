@@ -1,67 +1,67 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css';
 
 .root {
-	font-family: Helvetica, sans-serif;
-	font-size: 13px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
 	color: #fff;
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to bottom right, #0181c2, #04a7f9, #4bc4f7);
+	display: flex;	
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.leading {
+	box-sizing: border-box;
+	padding: 16px;
+	flex-grow: 1;
 	display: flex;
+	flex-direction: row;
+	align-items: center;
+    justify-content: space-between;
 }
 
-.container {
-	padding: 25px;
-	width: 60%;
-}
-
-.containerRight {
+.trailing {
 	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 0 7px 7px 0;
-	width: 40%;
+	width: 20%;
+	box-sizing: border-box;
+	padding: 16px;
+	font-size: 40px;
+	line-height: 40px;
+	font-weight: 600;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.hr {
-	width: 100%;
-	height: 0;
-	border-bottom: solid 1px #fff;
-	opacity: 0.4;
-	margin: 10px 0;
+.name {
+	margin-bottom: 8px;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	letter-spacing: 1px;
+	margin: 0;
 }
 
-.current {
-	font-size: 45px;
-}
-
-.range {
-	font-size: 12px;
-	margin: 0 0 5px 2px;
-}
-
-.header {
-	margin: 0 0 10px 0;
-	font-weight: 300;
-	font-size: x-large;
-	letter-spacing: 2px;
-}
-
-.desc {
-	font-size: 16px;
+.time {
+	margin-top: 0;
+	margin-bottom: 4px;	
+	font-size: 14px;
+	line-height: 16px;
+	color: #efefef;
 }
 
 .icon {
-	font-size: 20px;
-	margin-top: 15px;
-	font-size: 35px;
+	font-size: 18px;
+	margin-left: 4px;
 }
 
-.mainIcon {
-	font-size: 100px;
+.description {
+	display: flex;
+	align-items: center;
+	margin-top: 4px;
 }
 
 .info {
-	margin-bottom: 5px;
+	text-align: right;
 }
